@@ -69,6 +69,7 @@ class Api {
       headers['Authorization'] = 'Bearer $token';
     }
 
+    print('url= $url body= $body token= $token');
     // تنفيذ الطلب
     final http.Response response = await http.put(
       Uri.parse(url),
@@ -78,6 +79,7 @@ class Api {
 
     // فحص حالة الاستجابة
     if (response.statusCode == 200) {
+      print('${jsonDecode(response.body)}');
       return jsonDecode(response.body); // إرجاع البيانات
     } else {
       // إرجاع رسالة الخطأ

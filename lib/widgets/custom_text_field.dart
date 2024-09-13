@@ -7,18 +7,21 @@ class CustomTextField extends StatelessWidget {
     this.onChanged,
     this.obscureText = false,
     this.keyboardType,
+    this.controller,
   });
 
-  Function(String)? onChanged;
+  final Function(String)? onChanged;
   final String? hintText;
-  bool? obscureText;
-  TextInputType? keyboardType;
+  final bool obscureText;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       keyboardType: keyboardType,
-      obscureText: obscureText!,
+      obscureText: obscureText,
       onChanged: onChanged,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
