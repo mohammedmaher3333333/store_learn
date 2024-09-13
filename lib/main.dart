@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_learn/screens/home_page.dart';
+import 'package:store_learn/screens/update_product_page.dart';
 
 void main() {
   runApp(const StoreApp());
@@ -18,10 +19,10 @@ class StoreApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        HomePage.id:(context)=>const HomePage(),
+        HomePage.id: (context) => HomePage(),
+        UpdateProductPage.id: (context) => UpdateProductPage(),
       },
       initialRoute: HomePage.id,
     );
   }
 }
-

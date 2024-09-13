@@ -1,7 +1,7 @@
 class ProductModel {
   final int id;
   final String title;
-  final double price; // تأكد من أن هذا النوع هو double
+  final double price;
   final String description;
   final String category;
   final String image;
@@ -41,7 +41,7 @@ class Rating {
 
   factory Rating.fromJson(Map<String, dynamic> json) {
     return Rating(
-      rate: (json['rate'] as num).toDouble(), // تحويل من num إلى double
+      rate: (json['rate'] as num).toDouble(),
       count: json['count'],
     );
   }
